@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+body {
+  color: white;
+  background: black;
+}
+
+.btn-cut,
+.btn-cut::after {
+  /* padding: 16px 20px;
+  font-size: 18px; */
+  background: linear-gradient(
+    135deg,
+    transparent 10%,
+    #17165a 10%,
+    #17165a 95%,
+    transparent 95%
+  );
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  line-height: 1;
+  outline: transparent;
+  position: relative;
+}
+
+.btn-cut::after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  content: "HOVER ME";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    transparent 3%,
+    #00e6f6 3%,
+    #00e6f6 5%,
+    #17165a 5%
+  );
+  text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+  clip-path: var(--slice-0);
+}
+
+.glitch::after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  content: "HOVER ME";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    transparent 3%,
+    #00e6f6 3%,
+    #00e6f6 5%,
+    #17165a 5%
+  );
+  text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+  clip-path: var(--slice-0);
+  animation: 5s glitch infinite;
+  animation-timing-function: steps(1, end);
+}
+
+.glitch-white::after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  content: "HOVER ME";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    transparent 3%,
+    #00e6f6 3%,
+    #00e6f6 5%,
+    #ffffff 5%
+  );
+  text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+  clip-path: var(--slice-0);
+  animation: 5s glitch infinite;
+  animation-timing-function: steps(1, end);
+}
+
+.glitch-black::after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  content: "HOVER ME";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    transparent 3%,
+    #00e6f6 3%,
+    #00e6f6 5%,
+    #000 5%
+  );
+  text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+  clip-path: var(--slice-0);
+  animation: 5s glitch infinite;
+  animation-timing-function: steps(1, end);
+}
+
+@keyframes glitch {
+  0% {
+    opacity: 1;
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+
+  2% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+
+  4% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+
+  6% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+
+  8% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+
+  12% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+
+  14% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+
+  16% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+
+  18% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+
+  20% {
+    opacity: 0;
+  }
+}
+
+.hero-btn {
+  background: linear-gradient(
+    135deg,
+    transparent 10%,
+    #17165a 10%,
+    #17165a 90%,
+    transparent 90%
+  );
+}
+.hero-btn-alt {
+  background: linear-gradient(
+    45deg,
+    transparent 10%,
+    #fff 10%,
+    #fff 90%,
+    transparent 90%
+  );
+
+  color: #17165a;
+}
+
+.hero-btn-black {
+  background: linear-gradient(
+    135deg,
+    transparent 10%,
+    #000 10%,
+    #000 90%,
+    transparent 90%
+  );
+
+  color: #fff;
+}
+
+.b-r-half::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  width: 2px;
+  height: 50%;
+  background-color: #000;
+}
