@@ -187,7 +187,7 @@ const LEFT = [
 
 const RIGHT = [
   { text: "Seeds", color: "#FFBD59", percentage: "5%" },
-  { text: "Pre-Sale", color: "#0080B3", percentage: "10%" },
+  { text: "private-sale", color: "#0080B3", percentage: "10%" },
   { text: "Launchpad", color: "#00C2CB", percentage: "5%" },
   { text: "Treasury", color: "#7E91E9", percentage: "25%" },
 ];

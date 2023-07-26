@@ -58,7 +58,7 @@ export default function Supply() {
                 <ProgressBar maxValue={1_000_000_000} value={0} />
               </div>
               <button className="hover:-translate-y-1 mt-12 mx-auto block active:translate-y-0 active:brightness-[0.85] hero-btn px-10 py-5 text-xl font-bold">
-                JOIN NOW
+                <a href="/pre-sale">JOIN NOW</a>
               </button>
             </motion.div>
           </BorderedContainer>
