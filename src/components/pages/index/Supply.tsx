@@ -52,10 +52,10 @@ export default function Supply() {
             >
               <h2 className="text-3xl text-center">Token supplied already</h2>
               <span className="text-xl text-center block font-light mt-4">
-                103,948,227 / 1,000,000,000
+                0 / 1,000,000,000
               </span>
               <div className="mt-10 shadow-[0px_0px_21px_0px_#004EE7]  rounded-[15px] grid w-full">
-                <ProgressBar maxValue={1_000_000_000} value={103_948_227} />
+                <ProgressBar maxValue={1_000_000_000} value={0} />
               </div>
               <button className="hover:-translate-y-1 mt-12 mx-auto block active:translate-y-0 active:brightness-[0.85] hero-btn px-10 py-5 text-xl font-bold">
                 JOIN NOW

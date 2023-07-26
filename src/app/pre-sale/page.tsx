@@ -86,11 +86,11 @@ export default function PreSale() {
               <input
                 required
                 placeholder="Amount"
-                defaultValue={30000}
+                defaultValue={3000000}
                 {...register("amount", {
                   min: {
-                    value: 30000,
-                    message: "Amount must be atleast 30000!",
+                    value: 3000000,
+                    message: "Amount must be atleast Rp. 3.000.000 or 200 USD!",
                   },
                 })}
                 type="number"

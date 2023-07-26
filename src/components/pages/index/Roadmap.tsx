@@ -153,8 +153,10 @@ export default function Roadmap() {
               </motion.div>
             ))}
           </div>
-          <div className="flex flex-col gap-14 mt-32">
-            {TBD.slice(0, 2).map((q, i) => (
+        </div>
+        <div className="mt-40 ">
+          <div className="flex flex-col gap-14">
+            {TBD.slice(0, 2).map(({ title, items }, i) => (
               <motion.div
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -163,13 +165,13 @@ export default function Roadmap() {
                 key={i}
               >
                 <div className="flex flex-col">
-                  <h3 className="font-bold text-4xl">{q}</h3>
+                  <h3 className="font-bold text-4xl">{title}</h3>
                   <motion.ul
                     layout
                     initial={"hidden"}
                     whileInView={"show"}
                     variants={container}
-                    className="ml-2 pl-10 mt-4 list-disc min-h-[120px] grow relative"
+                    className="ml-2 pl-10 mt-4 list-disc grow relative"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -182,7 +184,11 @@ export default function Roadmap() {
                         fill="white"
                       />
                     </svg>
-                    TBD
+                    {items.map((item, j) => (
+                      <motion.li variants={child} key={j}>
+                        {item}
+                      </motion.li>
+                    ))}
                   </motion.ul>
                 </div>
                 <motion.div
@@ -198,15 +204,15 @@ export default function Roadmap() {
                   }}
                 >
                   <span className="font-bold text-5xl md:text-6xl text-center block">
-                    {q.substring(0, 2)} <br />
-                    {q.substring(2)}
+                    {title.substring(0, 2)} <br />
+                    {title.substring(2)}
                   </span>
                 </motion.div>
               </motion.div>
             ))}
           </div>
           <div className="flex flex-col gap-14 mt-32">
-            {TBD.slice(2).map((q, i) => (
+            {TBD.slice(2).map(({ title, items }, i) => (
               <motion.div
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -227,18 +233,18 @@ export default function Roadmap() {
                   }}
                 >
                   <span className="font-bold text-5xl md:text-6xl text-center block">
-                    {q.substring(0, 2)} <br />
-                    {q.substring(2)}
+                    {title.substring(0, 2)} <br />
+                    {title.substring(2)}
                   </span>
                 </motion.div>
-                <div className="flex items-end flex-col">
-                  <h3 className="font-bold text-4xl text-right">{q}</h3>
+                <div className="flex flex-col">
+                  <h3 className="font-bold text-4xl text-right">{title}</h3>
                   <motion.ul
                     layout
                     initial={"hidden"}
                     whileInView={"show"}
                     variants={container}
-                    className="pr-10 mt-4 list w-fit grow min-h-[120px] relative"
+                    className="pr-4 mt-4 list-disc grow relative"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -251,7 +257,11 @@ export default function Roadmap() {
                         fill="white"
                       />
                     </svg>
-                    TBD
+                    {items.map((item, j) => (
+                      <motion.li variants={child} key={j}>
+                        {item}
+                      </motion.li>
+                    ))}
                   </motion.ul>
                 </div>
               </motion.div>
@@ -289,44 +299,70 @@ const QUARTERS = [
       "Website development",
       "Community development",
       "Smart Contract",
-      "Private sale",
-      "Audit & KYC",
-      "Tournament start",
     ],
   },
   {
     title: "Q3 2023",
     items: [
-      "Airdrop",
-      "Marketing",
+      "Private sale",
+      "Testnet release",
+      "Audit & KYC",
+      "Marketing & Partnership",
+      "Online Tournament",
+      "Sponsorship open",
       "Presale",
-      "Public sale",
-      "Listing on CMC and Coingecko",
     ],
   },
   {
     title: "Q4 2023",
-    //     Merchandise shop Development
-    // Partnership with Esports team
-    // Item games shop development
-    // Esports DAO wallet development
     items: [
-      "Merchandise shop Development",
-      "Partnership with Esports team",
-      "Item games shop development",
-      "Esports DAO wallet development",
+      "Marketplace Development",
+      "Product Development",
+      "Launchpad",
+      "Public Sale",
+      "Token burning and buyback",
     ],
   },
   {
     title: "Q1 2024",
     items: [
-      "Staking platforms",
-      "NFT release",
+      "Listing on CMC and Coingecko",
       "Listing on CEX",
-      "Esports team development",
+      "Staking platforms development",
       "Live streaming platforms development",
     ],
   },
+  
 ];
 
-const TBD = ["Q2 2024", "Q3 2024", "Q4 2024", "Q1 2025"];
+const TBD = [
+  {
+    title: "Q2 2024",
+    items: [
+      "Esports Team Development",
+      "Online League",
+      "Host esports conference and meetups",
+      "Host a wide variety of events",
+    ],
+  },
+  {
+    title: "Q3 2024",
+    items: [
+      "Esports Fundraising a sponsorship platform",
+      "EsportsDAO Ventures",
+      "Esports support foundation",
+    ],
+  },
+  {
+    title: "Q4 2024",
+    items: [
+      "Onsite tournaments",
+    ],
+  },
+  {
+    title: "Q1 2025",
+    items: [
+      "Onsite League",
+    ],
+  },
+];

@@ -46,7 +46,9 @@ export default function Payment() {
           />
         </motion.svg>
         <p className="text-xl text-center font-bold text-black mt-20">
-          Amount to pay: {amount * 100}
+          Amount to pay: Rp.{amount} <br>
+          </br>
+          You will receive: {amount / 100} Token EDAO
         </p>
         <div className="mt-12 py-14 grid md:grid-cols-2 md:grid-rows-2 w-fit mx-auto gap-y-8 gap-x-20 md:gap-y-28 relative">
           <img

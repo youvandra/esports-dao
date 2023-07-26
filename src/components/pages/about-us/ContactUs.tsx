@@ -37,10 +37,9 @@ export default function ContactUs() {
         <div className="grid md:grid-cols-2 gap-y-8 gap-x-20 mt-8">
           <div>
             <p className="text-xl ">
-              Proin gravida nibh vel velit auctor aliquet. Aenean velit
-              sollicitudin, lorem quis bibendum auctor, nisi elit ipsum
-              consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit
-              amet nibh vulputate cursus a sit amet mauris.
+              Thank you for your interest in Esports DAO! 
+              We welcome your inquiries, feedback, and suggestions.
+              Our email : esportsdao.ofc@gmail.com
             </p>
             <nav className="gap-3 flex mt-16 flex-wrap">
               {SOCIALS.map(({ Icon, link }, i) => (

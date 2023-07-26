@@ -66,14 +66,15 @@ export default function Sender() {
       case "bca":
         return (
           <span>
+            Send to Esports DAO Bank : <br />
             a/n Mohamad Rizki Ardhiana <br />
             1092584652
           </span>
         );
       case "eth":
-        return <>0xD55605e4c2F86918c50b6d903a9fC837C1155499</>;
+        return <>Send to Esports DAO Wallet: <br /> 0xD55605e4c2F86918c50b6d903a9fC837C1155499</>;
       case "bnb":
-        return <>0xD55605e4c2F86918c50b6d903a9fC837C1155499</>;
+        return <>Send to Esports DAO Wallet: <br /> 0xD55605e4c2F86918c50b6d903a9fC837C1155499</>;
       case "paypal":
         return (
           <Link
@@ -81,7 +82,7 @@ export default function Sender() {
             target="_blank"
             href="https://www.paypal.me/EsportsDAO"
           >
-            https://www.paypal.me/EsportsDAO
+            Send to Esports DAO Paypal <br /> https://www.paypal.me/EsportsDAO
           </Link>
         );
       default:

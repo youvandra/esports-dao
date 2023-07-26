@@ -7,7 +7,6 @@ import {
   FaYoutube,
   FaTelegram,
   FaMedium,
-  FaInstagram,
   FaFacebook,
   FaTwitter,
 } from "react-icons/fa";
@@ -46,10 +45,6 @@ export const SOCIALS: { Icon: IconType; link: string }[] = [
   {
     link: "https://facebook.com/groups/983804452808447/?ref=share&mibextid=S66gvF",
     Icon: FaFacebook,
-  },
-  {
-    link: "https://instagram.com/ardiiaanaaa?igshid=OGQ5ZDc2ODk2ZA==",
-    Icon: FaInstagram,
   },
   {
     link: "https://www.linkedin.com/company/esportsdao/",

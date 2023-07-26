@@ -149,7 +149,7 @@ const RIGHT_LINKS: NavbarLink[] = [
   },
   {
     label: "CONTACT",
-    link: "/contact",
+    link: "/contact-us",
   },
 ];
 

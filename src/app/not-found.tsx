@@ -1,6 +1,7 @@
 import BottomDecoration from "@/components/BottomDecoration";
 import TopBrackets from "@/components/TopBrackets";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Custom404() {
   return (
@@ -29,11 +30,8 @@ export default function Custom404() {
           width={128}
           height={128}
         />
-        <h1 className="text-black font-bold  text-5xl md:text-6xl text-center mt-6">
-          404
-        </h1>
         <h2 className="mt-6 font-light text-black text-4xl text-center">
-          THIS PAGE COULD NOT BE FOUND.
+          THIS PAGE UNDER DEVELOPMENT.
         </h2>
         {/* border  */}
         <img

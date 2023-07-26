@@ -49,8 +49,10 @@ export default function RootLayout({
 export const PAGES = [
   "/",
   "/about-us",
+  "/contact-us",
   "/pre-sale",
   "/terms-and-agreement",
+  "/privacy-policy",
   "/payment-method",
   "/sender",
   "/success",

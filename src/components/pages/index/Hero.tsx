@@ -47,10 +47,13 @@ export default function Hero() {
           >
             JOIN NOW
           </Link>
-
-          <button className="relative glitch-white max-sm:text-sm max-sm:px-6 max-sm:py-3  hover:-translate-y-1 active:translate-y-0 active:brightness-[0.85] hero-btn-alt px-10 py-5 text-xl font-bold">
+          <Link
+            target="_blank"
+            href={"https://drive.google.com/file/d/10rFfgfKvMVzvwkVOnFASiTlrcd5uEo1D/view?usp=sharing"}
+            className="relative glitch-white max-sm:text-sm max-sm:px-6 max-sm:py-3  hover:-translate-y-1 active:translate-y-0 active:brightness-[0.85] hero-btn-alt px-10 py-5 text-xl font-bold"
+          >
             WHITE PAPER
-          </button>
+          </Link>
         </motion.div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
