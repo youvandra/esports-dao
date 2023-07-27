@@ -15,7 +15,7 @@ export default function Tokenomics() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="font-bold text-5xl md:text-6xl pt-16 text-center text-black"
         >
-          Tokenomic
+          Tokenomics
         </motion.h2>
         <motion.svg
           initial={{ opacity: 0 }}
