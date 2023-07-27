@@ -78,7 +78,7 @@ export default function Supply() {
             className="grid lg:grid-cols-3 lg:justify-between divide-y-2 lg:divide-y-0 gap-y-16 lg:divide-x-2 divide-dashed"
           >
             <motion.div variants={item} className="text-center">
-              <h3 className="font-bold text-4xl mb-1">Payement</h3>
+              <h3 className="font-bold text-4xl mb-1">Payment</h3>
               <span className="text-xl font-light">
                 Merchandise,NFT, IN-Game purchase,Marketplace
               </span>
