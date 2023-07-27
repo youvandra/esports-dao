@@ -143,7 +143,7 @@ const DISTRIBUTION = [
     amount: "50.000.000",
     price: "$0.0066",
     allocation: "$330.000",
-    min: "$300",
+    min: "$200",
   },
   {
     feature: "Pre - Sale",
@@ -159,7 +159,7 @@ const DISTRIBUTION = [
     amount: "50.000.000",
     price: "$0.0013",
     allocation: "$650.000",
-    min: "50$",
+    min: "$50",
   },
   {
     feature: "",
