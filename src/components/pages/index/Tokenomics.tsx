@@ -7,7 +7,10 @@ import BottomDecoration from "@/components/BottomDecoration";
 
 export default function Tokenomics() {
   return (
-    <div className=" pb-28 -mx-5 md:-mx-12 px-5 relative md:px-12 bg-[#DCDCDC]">
+    <div
+      id="tokenomic"
+      className=" pb-28 -mx-5 md:-mx-12 px-5 relative md:px-12 bg-[#DCDCDC]"
+    >
       <div className="max-w-[1440px] mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 100 }}

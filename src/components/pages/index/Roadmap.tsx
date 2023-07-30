@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 export default function Roadmap() {
   return (
     <div
+      id="roadmap"
       style={{
         backgroundImage: "url('/roadmap.png')",
         backgroundSize: "cover",
@@ -332,7 +333,6 @@ const QUARTERS = [
       "Live streaming platforms development",
     ],
   },
-  
 ];
 
 const TBD = [
@@ -355,14 +355,10 @@ const TBD = [
   },
   {
     title: "Q4 2024",
-    items: [
-      "Onsite tournaments",
-    ],
+    items: ["Onsite tournaments"],
   },
   {
     title: "Q1 2025",
-    items: [
-      "Onsite League",
-    ],
+    items: ["Onsite League"],
   },
 ];
