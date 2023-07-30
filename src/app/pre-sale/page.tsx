@@ -7,6 +7,8 @@ import Link from "next/link";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { notifications } from "@mantine/notifications";
+import { useState } from "react";
+import { RadioGroup } from "@headlessui/react";
 
 type Inputs = {
   firstName: string;
@@ -45,6 +47,10 @@ export default function PreSale() {
   };
 
   const errorMessages = Object.values(errors).map(({ message }) => message);
+
+  const [currency, setCurrency] = useState<"usd" | "rp">("usd");
+
+  const minValue = currency === "usd" ? 200 : 3_000_000;
 
   return (
     <div className="-mx-5 md:-mx-12 px-5 md:px-12 bg-[#DCDCDC] pb-52 pt-24 relative">
@@ -86,11 +92,11 @@ export default function PreSale() {
               <input
                 required
                 placeholder="Amount"
-                defaultValue={3000000}
+                defaultValue={minValue}
                 {...register("amount", {
                   min: {
-                    value: 3000000,
-                    message: "Amount must be atleast Rp. 3.000.000 or 200 USD!",
+                    value: minValue,
+                    message: `Amount must be atleast ${minValue}!`,
                   },
                 })}
                 type="number"
@@ -100,9 +106,40 @@ export default function PreSale() {
                     : "ring-[#6d6d6d] focus:ring-[#8d8d8d]"
                 } focus:ring-2 focus:ring-inset  w-full px-3 py-5 block   placeholder:text-[#6D6D6D] text-xl font-light text-black bg-transparent`}
               />
-              <span className="text-sm text-[#ACACAC] mt-1">
-                *Min. 1 BNB ≈ $200
-              </span>
+              <div className="flex justify-between items-start mt-1">
+                <span className="text-sm text-[#ACACAC] ">
+                  *Min. 1 BNB ≈ $200
+                </span>
+                <RadioGroup
+                  className={"grid grid-cols-2 w-fit gap-2 ml-auto"}
+                  value={currency}
+                  onChange={setCurrency}
+                >
+                  <RadioGroup.Option value="usd">
+                    {({ checked }) => (
+                      <span
+                        className={`text-xs p-1 cursor-pointer w-full block text-center ${
+                          checked ? "bg-[#6d6d6d]" : "text-[#6d6d6d]"
+                        }`}
+                      >
+                        USD
+                      </span>
+                    )}
+                  </RadioGroup.Option>
+
+                  <RadioGroup.Option value="rp">
+                    {({ checked }) => (
+                      <span
+                        className={`text-xs p-1 cursor-pointer w-full block text-center ${
+                          checked ? "bg-[#6d6d6d]" : "text-[#6d6d6d]"
+                        }`}
+                      >
+                        RP
+                      </span>
+                    )}
+                  </RadioGroup.Option>
+                </RadioGroup>
+              </div>
             </div>
             <input
               required

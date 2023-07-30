@@ -16,9 +16,11 @@ export const POST = async (req: NextRequest) => {
     .send({
       to: EMAIL_RECEIVER,
       from: EMAIL_SENDER,
-      subject: "test",
+      subject: "sender",
       text: `fullName: ${body.fullName}\n
-             accountNumber: ${body.accountNumber}`,
+             accountNumber: ${body.accountNumber}\n
+             method: ${body.method}\n
+             amount: ${body.amount}`,
       attachments: [
         {
           content: z,

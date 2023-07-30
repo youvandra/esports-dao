@@ -246,7 +246,7 @@ const RIGHT_LINKS: NavbarLink[] = [
       },
       {
         label: "About Us",
-        link: "/about_us",
+        link: "/about-us",
       },
     ],
   },

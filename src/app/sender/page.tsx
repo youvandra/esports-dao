@@ -39,6 +39,7 @@ export default function Sender() {
 
   const params = useSearchParams();
   const method = params.get("method");
+  const amount = params.get("amount");
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     const formData = new FormData();
@@ -46,6 +47,8 @@ export default function Sender() {
     formData.append("fullName", data.fullName);
     formData.append("accountNumber", data.accountNumber);
     formData.append("image", data.image);
+    formData.append("amount", amount);
+    formData.append("method", method);
 
     return await fetch("/api/sender", {
       method: "POST",
@@ -66,15 +69,14 @@ export default function Sender() {
       case "bca":
         return (
           <span>
-            Send to Esports DAO Bank : <br />
             a/n Mohamad Rizki Ardhiana <br />
             1092584652
           </span>
         );
       case "eth":
-        return <>Send to Esports DAO Wallet: <br /> 0xD55605e4c2F86918c50b6d903a9fC837C1155499</>;
+        return <>0xD55605e4c2F86918c50b6d903a9fC837C1155499</>;
       case "bnb":
-        return <>Send to Esports DAO Wallet: <br /> 0xD55605e4c2F86918c50b6d903a9fC837C1155499</>;
+        return <>0xD55605e4c2F86918c50b6d903a9fC837C1155499</>;
       case "paypal":
         return (
           <Link
@@ -82,7 +84,7 @@ export default function Sender() {
             target="_blank"
             href="https://www.paypal.me/EsportsDAO"
           >
-            Send to Esports DAO Paypal <br /> https://www.paypal.me/EsportsDAO
+            https://www.paypal.me/EsportsDAO
           </Link>
         );
       default:
