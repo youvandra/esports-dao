@@ -65,7 +65,7 @@ export default function Problem() {
           <div className="overflow-hidden ">
             <iframe
               className="aspect-video w-full"
-              src="https://www.youtube.com/embed/3NZHW-7vC80?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0"
+              src="https://www.youtube.com/embed/agZvMHZ9WfY"
             />
           </div>
         </div>
