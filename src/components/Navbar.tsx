@@ -140,11 +140,12 @@ function NavLink({
                 <Menu.Item key={key}>
                   {({ active }) => (
                     <Link
-                      href={l.link}
-                      className={`${
-                        active ? " bg-primary" : ""
-                      } block transition-colors font-bold w-full items-center rounded-md px-2 py-2 text-sm`}
-                    >
+                    href={l.link}
+                    className={`${
+                      active ? " bg-primary" : ""
+                    } block transition-colors font-bold w-full items-center rounded-md px-2 py-2 text-sm`}
+                    {...(l.label.includes("WHITEPAPER") || l.label.includes("LITE PAPER") ? { target: "_blank" } : {})}
+                  >
                       {l.label}
                     </Link>
                   )}
@@ -252,7 +253,7 @@ const RIGHT_LINKS: NavbarLink[] = [
   },
   {
     label: "Contact",
-    link: "/contact",
+    link: "/contact-us",
   },
 ];
 

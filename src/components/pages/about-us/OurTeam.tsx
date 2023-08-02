@@ -46,31 +46,42 @@ export default function OurTeam() {
           { maxWidth: "xs", slideSize: "100%" },
         ]}
       >
-        {TEAM.map(({ image, name, role, link }, i) => (
+        {TEAM.map(({ image, name, role, link_twitter,link_linkedin }, i) => (
           <Carousel.Slide key={i} className="flex flex-col w-fit items-start">
-            <div className="p-[10px] border border-white border-dashed">
-              <Image
-                alt={name}
-                src={image}
-                width={217}
-                height={217}
-                quality={100}
-              />
-            </div>
-            <div className="flex flex-col items-start">
-              <h4 className="font-bold text-xl mt-4">{name}</h4>
-              <p className="text-xl font-light mt-2 text-start">{role}</p>
-              <Link href={link} target="_blank" className="mt-4">
+          <div className="p-[10px] border border-white border-dashed">
+            <Image
+              alt={name}
+              src={image}
+              width={217}
+              height={217}
+              quality={100}
+            />
+          </div>
+          <div className="flex flex-col items-start">
+            <h4 className="font-bold text-xl mt-4">{name}</h4>
+            <p className="text-xl font-light mt-2 text-start">{role}</p>
+            <div className="flex mt-4"> {/* Tambahkan div ini untuk ikon sosial */}
+              <Link href={link_linkedin} target="_blank" className="mr-4">
                 <Image
-                  src={"/insta.png"}
+                  src={"/linkedin.png"}
                   width={52}
                   height={52}
                   quality={100}
-                  alt={name + "'s instagram"}
+                  alt={name + "'s linkedin"}
+                />
+              </Link>
+              <Link href={link_twitter} target="_blank">
+                <Image
+                  src={"/twitter.png"}
+                  width={52}
+                  height={52}
+                  quality={100}
+                  alt={name + "'s twitter"}
                 />
               </Link>
             </div>
-          </Carousel.Slide>
+          </div>
+        </Carousel.Slide>        
         ))}
       </Carousel>
       <TopDecoration />
@@ -78,35 +89,40 @@ export default function OurTeam() {
   );
 }
 
-const TEAM: { name: string; image: string; role: string; link: string }[] = [
+const TEAM: { name: string; image: string; role: string; link_linkedin: string; link_twitter:string; }[] = [
   {
     name: "Ardiana",
     role: "Founder",
     image: "/team/ardiana.png",
-    link: "/#",
+    link_linkedin: "https://www.linkedin.com/in/ardhi-ana-esportsdao-778516281/",
+    link_twitter: "https://twitter.com/ArdhianaEDAO",
   },
   {
     name: "Michelle Evelyn",
     role: "Co-Founder",
     image: "/team/michelle.png",
-    link: "/#",
+    link_linkedin: "https://www.linkedin.com/in/michelle-evelyn-b64245283/",
+    link_twitter: "https://twitter.com/michelleevelyn4",
   },
   {
     name: "Abel Owen",
     role: "Community Manager",
     image: "/team/abel.png",
-    link: "/#",
+    link_linkedin: "https://www.linkedin.com/in/~abel-owen-636843236/",
+    link_twitter: "https://twitter.com/THISSABEL",
   },
   {
     name: "Azmi Abdul Aziz",
     role: "Esports Project Manager",
     image: "/team/azmi.png",
-    link: "/#",
+    link_linkedin: "https://www.linkedin.com/in/azmi-abdul-aziz-1012a1283/",
+    link_twitter: "https://twitter.com/imzabackward",
   },
   {
     name: "Melburns Woods III",
     role: "Business Development and Advisor",
     image: "/team/mel.png",
-    link: "/#",
+    link_linkedin: "https://www.linkedin.com/in/melburn-woods-iii-52278b234/",
+    link_twitter: "https://twitter.com/Bitburn_888",
   },
 ];
