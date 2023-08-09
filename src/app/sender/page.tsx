@@ -26,7 +26,6 @@ export default function Sender() {
     handleSubmit,
     setValue,
     watch,
-    getFieldState,
     formState: { errors, isLoading, isSubmitting },
   } = useForm<Inputs>();
 

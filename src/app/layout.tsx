@@ -56,4 +56,5 @@ export const PAGES = [
   "/payment-method",
   "/sender",
   "/success",
+  "/mint",
 ];
