@@ -1,4 +1,5 @@
 "use client";
+import { NFT_CONTRACT_ADDRESS } from "@/const";
 import {
   useMintNFT,
   useContract,
@@ -26,9 +27,7 @@ export default function Mint() {
     watch,
     setValue,
   } = useForm<Inputs>();
-  const { contract } = useContract(
-    process.env.NEXT_PUBLIC_NFT_CONTRACT_ADDRESS
-  );
+  const { contract } = useContract(NFT_CONTRACT_ADDRESS);
 
   const handleChange = (file: File | undefined) => {
     if (!file) return;
@@ -102,7 +101,7 @@ export default function Mint() {
 
         <Web3Button
           className="col-span-2 rounded-none bg-[#ededef]"
-          contractAddress={process.env.NEXT_PUBLIC_NFT_CONTRACT_ADDRESS ?? ""}
+          contractAddress={NFT_CONTRACT_ADDRESS}
           action={() =>
             mintNft({
               metadata: {
