@@ -20,6 +20,12 @@ export default function Mint() {
         Claim Our Testnet Token
       </h2>
       <div className="container mx-auto max-w-4xl flex flex-col gap-4 mt-8">
+        {" "}
+        {balance && (
+          <span className="text-[#ededef] text-center">
+            You have {balance.displayValue} tokens
+          </span>
+        )}
         <Web3Button
           className="col-span-2 text-xl rounded-none bg-[#ededef]"
           contractAddress={NFT_CONTRACT_ADDRESS}
@@ -32,11 +38,6 @@ export default function Mint() {
         >
           Claim now
         </Web3Button>{" "}
-        {balance && (
-          <span className="text-[#ededef]">
-            You have {balance.displayValue} tokens
-          </span>
-        )}
       </div>
     </div>
   );
