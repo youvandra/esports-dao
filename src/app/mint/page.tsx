@@ -1,5 +1,5 @@
 import { ThirdwebProvider } from "@/components/ThirdwebProvider";
-import { Mumbai } from "@thirdweb-dev/chains";
+import { Sepolia } from "@thirdweb-dev/chains";
 import Mint from "@/components/pages/mint/Mint";
 import { THIRDWEB_CLIENT_ID } from "@/const";
 
@@ -7,9 +7,9 @@ export default function Page() {
   return (
     <ThirdwebProvider
       autoConnect
-      activeChain={Mumbai}
+      activeChain={Sepolia}
       clientId={THIRDWEB_CLIENT_ID}
-      supportedChains={[Mumbai]}
+      supportedChains={[Sepolia]}
     >
       <Mint />
     </ThirdwebProvider>
