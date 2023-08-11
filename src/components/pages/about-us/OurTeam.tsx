@@ -98,11 +98,11 @@ const TEAM: { name: string; image: string; role: string; link_linkedin: string; 
     link_twitter: "https://twitter.com/ArdhianaEDAO",
   },
   {
-    name: "Michelle Evelyn",
+    name: "Melburns Woods III",
     role: "Co-Founder",
-    image: "/team/michelle.png",
-    link_linkedin: "https://www.linkedin.com/in/michelle-evelyn-b64245283/",
-    link_twitter: "https://twitter.com/michelleevelyn4",
+    image: "/team/mel.png",
+    link_linkedin: "https://www.linkedin.com/in/melburn-woods-iii-52278b234/",
+    link_twitter: "https://twitter.com/Bitburn_888",
   },
   {
     name: "Abel Owen",
@@ -117,12 +117,5 @@ const TEAM: { name: string; image: string; role: string; link_linkedin: string; 
     image: "/team/azmi.png",
     link_linkedin: "https://www.linkedin.com/in/azmi-abdul-aziz-1012a1283/",
     link_twitter: "https://twitter.com/imzabackward",
-  },
-  {
-    name: "Melburns Woods III",
-    role: "Business Development and Advisor",
-    image: "/team/mel.png",
-    link_linkedin: "https://www.linkedin.com/in/melburn-woods-iii-52278b234/",
-    link_twitter: "https://twitter.com/Bitburn_888",
   },
 ];
