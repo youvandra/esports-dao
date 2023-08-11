@@ -8,18 +8,12 @@ import {
   useTokenBalance,
 } from "@thirdweb-dev/react";
 
-interface Inputs {
-  amount: number;
-}
-
-const fileTypes = ["JPG", "PNG"];
-
 export default function Mint() {
   const { contract } = useContract(NFT_CONTRACT_ADDRESS);
 
   const { mutateAsync: claimToken } = useClaimToken(contract);
   const address = useAddress();
-
+  const { data: balance } = useTokenBalance(contract, address);
   return (
     <div className="mt-16">
       <h2 className="mx-auto font-bold text-4xl md:text-5xl w-fit">
@@ -37,7 +31,12 @@ export default function Mint() {
           }
         >
           Claim now
-        </Web3Button>
+        </Web3Button>{" "}
+        {balance && (
+          <span className="text-[#ededef]">
+            You have {balance.displayValue} tokens
+          </span>
+        )}
       </div>
     </div>
   );
