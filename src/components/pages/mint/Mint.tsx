@@ -17,7 +17,7 @@ export default function Mint() {
   return (
     <div className="mt-16">
       <h2 className="mx-auto font-bold text-4xl md:text-5xl w-fit">
-        Claim Our Token
+        Claim Our Testnet Token
       </h2>
       <div className="container mx-auto max-w-4xl flex flex-col gap-4 mt-8">
         <Web3Button
