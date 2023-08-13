@@ -51,7 +51,6 @@ export default function Mint() {
           />
           {balance && (
             <p className="mt-2 text-[#ededef]">
-              {" "}
               You currently have {balance.displayValue} tokens
             </p>
           )}

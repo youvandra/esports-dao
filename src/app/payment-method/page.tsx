@@ -1,14 +1,50 @@
 "use client";
 
-import { useSearchParams, useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import TopBrackets from "@/components/TopBrackets";
 import BottomDecoration from "@/components/BottomDecoration";
+import {
+  useAddress,
+  useClaimToken,
+  useContract,
+  useTokenBalance,
+  Web3Button,
+} from "@thirdweb-dev/react";
+import { BNB_CONTRACT_ADDRESS, ETH_CONTRACT_ADDRESS } from "@/const";
+import { useForm } from "react-hook-form";
+import { useActiveChain } from "@/context/activeChain";
+import { Ethereum, Binance } from "@thirdweb-dev/chains";
+import { useEffect } from "react";
 
 export default function Payment() {
   const params = useSearchParams();
   const amount = Number(params.get("amount"));
-  const router = useRouter();
+  const {
+    register,
+    formState: { errors },
+    watch,
+  } = useForm<{ amount: number }>();
+
+  const { chain, setChain } = useActiveChain();
+
+  const contractAddress =
+    chain.chainId === 1 ? ETH_CONTRACT_ADDRESS : BNB_CONTRACT_ADDRESS;
+
+  const { contract } = useContract(contractAddress);
+
+  const { mutateAsync: claimToken } = useClaimToken(contract);
+  const address = useAddress();
+
+  const {
+    data: balance,
+    isLoading,
+    error,
+  } = useTokenBalance(contract, address);
+
+  useEffect(() => {
+    setChain(Ethereum);
+  }, []);
 
   return (
     <div
@@ -45,26 +81,59 @@ export default function Payment() {
             fill="#000000"
           />
         </motion.svg>
-        <p className="text-xl text-center font-bold text-black mt-20">
-          Amount to pay: {amount}
-        </p>
+        {balance && (
+          <p className="text-xl text-center font-bold text-black mt-20">
+            Your token balance: {balance?.displayValue}
+          </p>
+        )}
+
+        <div className="container mx-auto max-w-4xl flex flex-col gap-4 mt-8">
+          <div>
+            <label htmlFor="amount" className="text-black text-xl">
+              Amount
+            </label>
+            <input
+              id="amount"
+              required
+              placeholder="Token amount"
+              type="number"
+              defaultValue={30_000}
+              {...register("amount", {
+                valueAsNumber: true,
+                min: {
+                  value: 30_000,
+                  message: `Amount must be atleast 30,000!`,
+                },
+              })}
+              className={`border-0 ring-1 ring-inset w-full text-black ${
+                errors.amount
+                  ? "ring-red-600 focus:ring-red-600"
+                  : "ring-black focus:ring-black"
+              } focus:ring-2 focus:ring-inset  px-3 py-5  block   placeholder:text-[#606060] text-xl font-light bg-transparent`}
+            />
+            {balance && (
+              <p className="mt-2 text-black">
+                You currently have {balance.displayValue} tokens
+              </p>
+            )}
+          </div>
+
+          <Web3Button
+            className="col-span-2 text-xl rounded-none bg-black text-[#ededef]"
+            contractAddress={contractAddress}
+            action={() =>
+              claimToken({
+                amount: watch("amount"),
+                to: address ?? "",
+              })
+            }
+          >
+            Claim Now
+          </Web3Button>
+          <p className="mt-2 text-black">Selected Network: {chain.name}</p>
+        </div>
+
         <div className="mt-12 py-14 grid md:grid-cols-2 md:grid-rows-2 w-fit mx-auto gap-y-8 gap-x-20 md:gap-y-28 relative">
-          <img
-            src="/dv.png"
-            className="absolute h-full w-full top-0 left-0 max-md:hidden"
-            alt=""
-          />
-          <button
-            style={{
-              backgroundImage: "url('/bca.png')",
-              width: 204,
-              height: 61,
-            }}
-            className="active:scale-95 z-[2]"
-            onClick={() => {
-              router.push(`/sender?method=bca&amount=${amount}`);
-            }}
-          />
           <button
             style={{
               backgroundImage: "url('/eth.png')",
@@ -73,20 +142,10 @@ export default function Payment() {
             }}
             className="active:scale-95 z-[2]"
             onClick={() => {
-              router.push(`/sender?method=eth&amount=${amount}`);
+              setChain(Ethereum);
             }}
           />
-          <button
-            style={{
-              backgroundImage: "url('/paypal.png')",
-              width: 204,
-              height: 61,
-            }}
-            className="active:scale-95 z-[2]"
-            onClick={() => {
-              router.push(`/sender?method=paypal&amount=${amount}`);
-            }}
-          />
+
           <button
             style={{
               backgroundImage: "url('/bnb.png')",
@@ -95,7 +154,7 @@ export default function Payment() {
             }}
             className="active:scale-95 z-[2]"
             onClick={() => {
-              router.push(`/sender?method=bnb&amount=${amount}`);
+              setChain(Binance);
             }}
           />
         </div>

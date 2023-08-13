@@ -7,10 +7,29 @@ import Footer from "@/components/Footer";
 import Socials from "@/components/Socials";
 import RootStyleRegistry from "./emotion";
 import { usePathname } from "next/navigation";
+import { ThirdwebProvider } from "@/components/ThirdwebProvider";
+import { Sepolia, Ethereum, Binance } from "@thirdweb-dev/chains";
+import { THIRDWEB_CLIENT_ID } from "@/const";
+import { ActiveChainProvider, useActiveChain } from "@/context/activeChain";
 
 const space_grotesk = Space_Grotesk({
   subsets: ["latin"],
 });
+
+const App = ({ children }: { children: React.ReactNode }) => {
+  const { chain } = useActiveChain();
+  return (
+    <ThirdwebProvider
+      autoConnect
+      activeChain={chain}
+      clientId={THIRDWEB_CLIENT_ID}
+      supportedChains={[Ethereum, Sepolia, Binance]}
+      autoSwitch
+    >
+      {children}
+    </ThirdwebProvider>
+  );
+};
 
 export default function RootLayout({
   children,
@@ -37,7 +56,11 @@ export default function RootLayout({
           }`}
         >
           <main className="px-5 md:px-12 overflow-x-hidden">
-            <RootStyleRegistry>{children}</RootStyleRegistry>
+            <RootStyleRegistry>
+              <ActiveChainProvider>
+                <App>{children}</App>
+              </ActiveChainProvider>
+            </RootStyleRegistry>
           </main>
         </div>
         {showNavbar && <Footer />}
