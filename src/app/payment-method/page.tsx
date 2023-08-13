@@ -92,25 +92,30 @@ export default function Payment() {
             <label htmlFor="amount" className="text-black text-xl">
               Amount
             </label>
-            <input
-              id="amount"
-              required
-              placeholder="Token amount"
-              type="number"
-              defaultValue={30_000}
-              {...register("amount", {
-                valueAsNumber: true,
-                min: {
-                  value: 30_000,
-                  message: `Amount must be atleast 30,000!`,
-                },
-              })}
-              className={`border-0 ring-1 ring-inset w-full text-black ${
-                errors.amount
-                  ? "ring-red-600 focus:ring-red-600"
-                  : "ring-black focus:ring-black"
-              } focus:ring-2 focus:ring-inset  px-3 py-5  block   placeholder:text-[#606060] text-xl font-light bg-transparent`}
-            />
+            <div className="relative">
+              <span className="absolute text-black text-xl top-5 right-3 font-semibold">
+                EDAO
+              </span>
+              <input
+                id="amount"
+                required
+                placeholder="Token amount"
+                type="number"
+                defaultValue={30_000}
+                {...register("amount", {
+                  valueAsNumber: true,
+                  min: {
+                    value: 30_000,
+                    message: `Amount must be atleast 30,000!`,
+                  },
+                })}
+                className={`border-0 ring-1 ring-inset w-full text-black ${
+                  errors.amount
+                    ? "ring-red-600 focus:ring-red-600"
+                    : "ring-black focus:ring-black"
+                } focus:ring-2 focus:ring-inset  px-3 py-5  block   placeholder:text-[#606060] text-xl font-light bg-transparent`}
+              />
+            </div>
             {balance && (
               <p className="mt-2 text-black">
                 You currently have {balance.displayValue} tokens
