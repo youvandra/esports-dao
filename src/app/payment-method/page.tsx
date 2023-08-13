@@ -1,6 +1,6 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import TopBrackets from "@/components/TopBrackets";
 import BottomDecoration from "@/components/BottomDecoration";
@@ -11,11 +11,12 @@ import {
   useTokenBalance,
   Web3Button,
 } from "@thirdweb-dev/react";
-import { BNB_CONTRACT_ADDRESS, ETH_CONTRACT_ADDRESS } from "@/const";
+import { POLYGON_CONTRACT_ADDRESS } from "@/const";
 import { useForm } from "react-hook-form";
 import { useActiveChain } from "@/context/activeChain";
-import { Ethereum, Binance } from "@thirdweb-dev/chains";
+import { Polygon } from "@thirdweb-dev/chains";
 import { useEffect } from "react";
+import Link from "next/link";
 
 export default function Payment() {
   const params = useSearchParams();
@@ -26,12 +27,9 @@ export default function Payment() {
     watch,
   } = useForm<{ amount: number }>();
 
-  const { chain, setChain } = useActiveChain();
+  const { setChain } = useActiveChain();
 
-  const contractAddress =
-    chain.chainId === 1 ? ETH_CONTRACT_ADDRESS : BNB_CONTRACT_ADDRESS;
-
-  const { contract } = useContract(contractAddress);
+  const { contract } = useContract(POLYGON_CONTRACT_ADDRESS);
 
   const { mutateAsync: claimToken } = useClaimToken(contract);
   const address = useAddress();
@@ -43,8 +41,10 @@ export default function Payment() {
   } = useTokenBalance(contract, address);
 
   useEffect(() => {
-    setChain(Ethereum);
+    setChain(Polygon);
   }, []);
+
+  const router = useRouter();
 
   return (
     <div
@@ -120,7 +120,7 @@ export default function Payment() {
 
           <Web3Button
             className="col-span-2 text-xl rounded-none bg-black text-[#ededef]"
-            contractAddress={contractAddress}
+            contractAddress={POLYGON_CONTRACT_ADDRESS}
             action={() =>
               claimToken({
                 amount: watch("amount"),
@@ -130,33 +130,31 @@ export default function Payment() {
           >
             Claim Now
           </Web3Button>
-          <p className="mt-2 text-black">Selected Network: {chain.name}</p>
         </div>
 
         <div className="mt-12 py-14 grid md:grid-cols-2 md:grid-rows-2 w-fit mx-auto gap-y-8 gap-x-20 md:gap-y-28 relative">
-          <button
+          <Link
+            href={`/sender?method=eth&amount=${amount}`}
             style={{
               backgroundImage: "url('/eth.png')",
               width: 204,
               height: 61,
             }}
             className="active:scale-95 z-[2]"
-            onClick={() => {
-              setChain(Ethereum);
-            }}
-          />
-
-          <button
+          >
+            <span className="sr-only">ethereum</span>
+          </Link>
+          <Link
             style={{
               backgroundImage: "url('/bnb.png')",
               width: 204,
               height: 61,
             }}
             className="active:scale-95 z-[2]"
-            onClick={() => {
-              setChain(Binance);
-            }}
-          />
+            href={`/sender?method=bnb&amount=${amount}`}
+          >
+            <span className="sr-only">bnb</span>
+          </Link>
         </div>
       </div>
       <TopBrackets color="black" />

@@ -1,5 +1,6 @@
 "use client";
 import { NFT_CONTRACT_ADDRESS } from "@/const";
+import { useActiveChain } from "@/context/activeChain";
 import {
   useContract,
   Web3Button,
@@ -7,7 +8,9 @@ import {
   useClaimToken,
   useTokenBalance,
 } from "@thirdweb-dev/react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { Polygon } from "@thirdweb-dev/chains";
 interface Inputs {
   amount: number;
 }
@@ -27,6 +30,12 @@ export default function Mint() {
     isLoading,
     error,
   } = useTokenBalance(contract, address);
+
+  const { setChain } = useActiveChain();
+
+  useEffect(() => {
+    setChain(Polygon);
+  }, []);
   return (
     <div className="mt-16">
       <h2 className="mx-auto font-bold text-4xl md:text-5xl w-fit">
