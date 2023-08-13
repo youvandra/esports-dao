@@ -339,7 +339,6 @@ const TBD = [
   {
     title: "Q2 2024",
     items: [
-      "Esports Team Development",
       "Online League",
       "Host esports conference and meetups",
       "Host a wide variety of events",

@@ -51,9 +51,11 @@ export default function Mint() {
           />
           {balance && (
             <p className="mt-2 text-[#ededef]">
-              You currently have {balance.displayValue} tokens
+              {" "}
+              You currently have {balance.displayValue} EDAO
             </p>
           )}
+          <p className="mt-2 text-[#ededef]">max token claim = 1000 EDAO</p>
         </div>
 
         <Web3Button
