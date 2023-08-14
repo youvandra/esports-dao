@@ -209,10 +209,6 @@ const LEFT_LINKS: NavbarLink[] = [
         label: "Tournament",
         link: "/tournament",
       },
-      {
-        label: "Esport team",
-        link: "/esport-team",
-      },
     ],
   },
 ];

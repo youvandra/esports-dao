@@ -118,4 +118,11 @@ const TEAM: { name: string; image: string; role: string; link_linkedin: string; 
     link_linkedin: "https://www.linkedin.com/in/azmi-abdul-aziz-1012a1283/",
     link_twitter: "https://twitter.com/imzabackward",
   },
+  {
+    name: "Youvandra",
+    role: "IT Leader",
+    image: "/team/youvan.png",
+    link_linkedin: "",
+    link_twitter: "",
+  },
 ];
