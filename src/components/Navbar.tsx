@@ -186,19 +186,11 @@ const LEFT_LINKS: NavbarLink[] = [
       },
       {
         label: "WHITEPAPER (ENG)",
-        link: "https://drive.google.com/file/d/10rFfgfKvMVzvwkVOnFASiTlrcd5uEo1D/view?usp=drive_link",
-      },
-      {
-        label: "WHITEPAPER (INDO)",
-        link: "https://drive.google.com/file/d/10Dl0S_qCU1SvMfrxJuDrYv-QEvPWX9nj/view?usp=drive_link",
+        link: "https://drive.google.com/file/d/1TkJgbvKBJjoH1GeF5w4ARplFplcSO4xj/view?usp=sharing",
       },
       {
         label: "LITE PAPER (ENG)",
-        link: "https://drive.google.com/file/d/16jhUzRBIV7X7YF14hDEJRQCbZUbp3HNR/view?usp=drive_link",
-      },
-      {
-        label: "LITE PAPER (INDO)",
-        link: "https://drive.google.com/file/d/14Ot-gi4cgxsn_ieW8MgSgvZn92e06-tS/view?usp=drive_link",
+        link: "https://drive.google.com/file/d/1lumxUlOoHhhwEt16r3QJ29kroeT14ZAQ/view?usp=sharing",
       },
     ],
   },

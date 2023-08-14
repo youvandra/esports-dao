@@ -8,7 +8,7 @@ import Socials from "@/components/Socials";
 import RootStyleRegistry from "./emotion";
 import { usePathname } from "next/navigation";
 import { ThirdwebProvider } from "@/components/ThirdwebProvider";
-import { Sepolia, Polygon } from "@thirdweb-dev/chains";
+import { Sepolia, Polygon, Mumbai} from "@thirdweb-dev/chains";
 import { THIRDWEB_CLIENT_ID } from "@/const";
 import { ActiveChainProvider, useActiveChain } from "@/context/activeChain";
 
@@ -23,7 +23,7 @@ const App = ({ children }: { children: React.ReactNode }) => {
       autoConnect
       activeChain={chain}
       clientId={THIRDWEB_CLIENT_ID}
-      supportedChains={[Sepolia, Polygon]}
+      supportedChains={[Sepolia, Polygon, Mumbai]}
       autoSwitch
     >
       {children}

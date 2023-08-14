@@ -126,18 +126,6 @@ export default function PreSale() {
                       </span>
                     )}
                   </RadioGroup.Option>
-
-                  <RadioGroup.Option value="rp">
-                    {({ checked }) => (
-                      <span
-                        className={`text-xs p-1 cursor-pointer w-full block text-center ${
-                          checked ? "bg-[#6d6d6d]" : "text-[#6d6d6d]"
-                        }`}
-                      >
-                        RP
-                      </span>
-                    )}
-                  </RadioGroup.Option>
                 </RadioGroup>
               </div>
             </div>
