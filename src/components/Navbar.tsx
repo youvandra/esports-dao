@@ -186,7 +186,7 @@ const LEFT_LINKS: NavbarLink[] = [
       },
       {
         label: "WHITEPAPER (ENG)",
-        link: "https://drive.google.com/file/d/1TkJgbvKBJjoH1GeF5w4ARplFplcSO4xj/view?usp=sharing",
+        link: "https://drive.google.com/file/d/1wgK6Z8SyC23hy9_gM_b8WGbeXjfu1CnI/view?usp=drive_link",
       },
       {
         label: "LITE PAPER (ENG)",

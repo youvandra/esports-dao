@@ -50,7 +50,7 @@ export default function Hero() {
           <Link
             target="_blank"
             href={
-              "https://drive.google.com/file/d/10rFfgfKvMVzvwkVOnFASiTlrcd5uEo1D/view?usp=sharing"
+              "https://drive.google.com/file/d/1wgK6Z8SyC23hy9_gM_b8WGbeXjfu1CnI/view?usp=drive_link"
             }
             className="relative glitch-white max-sm:text-sm max-sm:px-6 max-sm:py-3  hover:-translate-y-1 active:translate-y-0 active:brightness-[0.85] hero-btn-alt px-10 py-5 text-xl font-bold"
           >

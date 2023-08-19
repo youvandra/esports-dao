@@ -86,9 +86,6 @@ export default function Vision() {
             Organize monthly tournaments and Yearly League
           </motion.li>
           <motion.li variants={child}>
-            Form an international esports team
-          </motion.li>
-          <motion.li variants={child}>
             Host esports conferences and meetups
           </motion.li>
           <motion.li variants={child}>Organizing charity events</motion.li>
