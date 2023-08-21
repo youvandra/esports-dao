@@ -31,12 +31,12 @@ export default function Drawer({ children, isOpen, setIsOpen }: DrawerProps) {
               <Image alt="logo" width={36} height={36} src="/logo.webp" />
             </Link>
             <div className="flex items-center gap-x-2">
-              <Link
+              {/* <Link
                 href={"/pre-sale"}
                 className="glitch btn-cut transition-transform active:brightness-[0.85] px-4 py-3 text-sm"
               >
                 Private Sale
-              </Link>
+              </Link> */}
               <FiX
                 onClick={() => {
                   setIsOpen(false);
