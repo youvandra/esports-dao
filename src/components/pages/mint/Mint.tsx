@@ -64,7 +64,10 @@ export default function Mint() {
               You currently have {balance.displayValue} EDAO
             </p>
           )}
-          <p className="mt-2 text-[#ededef]">max token claim = 1000 EDAO</p>
+          <p className="mt-2 text-[#ededef]">*Max token claim = 1000 EDAO</p>
+          <p className="mt-2 text-[#ededef]">*It will be convert to real token while mainnet</p>
+          <p className="mt-2 text-[#ededef]">*You need 0.001 Matic faucet to claim 1 EDAO</p>
+          <p className="mt-2 text-[#ededef]">*You can claim 50 EDAO with 0.5 Matic</p>
         </div>
 
         <Web3Button
