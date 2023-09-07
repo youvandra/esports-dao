@@ -4,7 +4,7 @@ import React, { createContext, useContext, useState } from "react";
 const activeChainContext = createContext<{
   chain: Chain;
   setChain: React.Dispatch<React.SetStateAction<Chain>>;
-}>({ chain: <Mumbai></Mumbai>, setChain: () => {} });
+}>({ chain: Mumbai, setChain: () => {} });
 
 export const ActiveChainProvider = ({
   children,
