@@ -23,7 +23,7 @@ const App = ({ children }: { children: React.ReactNode }) => {
       autoConnect
       activeChain={chain}
       clientId={THIRDWEB_CLIENT_ID}
-      supportedChains={[Sepolia, Polygon, Mumbai]}
+      supportedChains={[Mumbai]}
       autoSwitch
     >
       {children}
