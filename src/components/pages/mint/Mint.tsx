@@ -10,7 +10,7 @@ import {
 } from "@thirdweb-dev/react";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Polygon, Mumbai } from "@thirdweb-dev/chains";
+import { Mumbai } from "@thirdweb-dev/chains";
 interface Inputs {
   amount: number;
 }

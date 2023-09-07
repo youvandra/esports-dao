@@ -14,7 +14,7 @@ import {
 import { POLYGON_CONTRACT_ADDRESS } from "@/const";
 import { useForm } from "react-hook-form";
 import { useActiveChain } from "@/context/activeChain";
-import { Polygon } from "@thirdweb-dev/chains";
+import { Mumbai } from "@thirdweb-dev/chains";
 import { useEffect } from "react";
 import Link from "next/link";
 
@@ -41,7 +41,7 @@ export default function Payment() {
   } = useTokenBalance(contract, address);
 
   useEffect(() => {
-    setChain(Polygon);
+    setChain(Mumbai);
   }, []);
 
   const router = useRouter();
