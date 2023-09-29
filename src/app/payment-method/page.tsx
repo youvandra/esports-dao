@@ -135,12 +135,6 @@ export default function Payment() {
           >
             Claim Now
           </Web3Button>
-
-          <p className="mt-2 text-black">
-                You currently have {balance.displayValue} tokens
-              </p>
-
-
         </div>
 
         <div className="mt-12 py-14 grid md:grid-cols-2 md:grid-rows-2 w-fit mx-auto gap-y-8 gap-x-20 md:gap-y-28 relative">
