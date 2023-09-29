@@ -58,6 +58,7 @@ export default function Mint() {
                 : "ring-[#ededef] focus:ring-[#ededef]"
             } focus:ring-2 focus:ring-inset  px-3 py-5  block   placeholder:text-[#606060] text-xl font-light bg-transparent`}
           />
+          
           {balance && (
             <p className="mt-2 text-[#ededef]">
               {" "}
@@ -81,6 +82,11 @@ export default function Mint() {
         >
           Claim Now
         </Web3Button>
+
+        <p className="mt-2 text-[#ededef]">Import EDAO Token to your wallet</p>
+        <p className="mt-2 text-blue-500">Token Address : <span className="text-[#ededef]">0xe64B0aA100e6Ef0fF23FeAD9d1c3b0c766d6A2cc</span></p>
+        <p className="mt-2 text-blue-500">Token Symbol  : <span className="text-[#ededef]">EDAO</span></p>
+        <p className="mt-2 text-blue-500">Token Decimal : <span className="text-[#ededef]">18</span></p>
       </div>
     </div>
   );
